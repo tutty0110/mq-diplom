@@ -466,7 +466,8 @@ width: 32%;
   text-decoration: underline;
 }
 .price {
-	display: block;
+	display: flex;
+	flex-direction: column;
 }
 .shop-sale {
 	display: flex;
@@ -479,14 +480,15 @@ width: 32%;
   color: #0f0d0e;
   text-decoration: line-through;
   position: relative;
+  width: max-content;
 }
 .old-price::after {
       content: '';
       width: 2px;
       border: #0f0d0e 0.5px solid;
       position: absolute;
-      top: 11px;
-      right: 12px;
+      top: 12px;
+      right: 3px;
     }
 
 .new-price {
