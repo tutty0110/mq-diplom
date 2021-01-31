@@ -132,7 +132,7 @@ h2, h3, ul, p {
   color: #0f0d0e;
   text-align: center; 
 }
-.trends-title, .popup-title::after {
+.trends-title::after, .popup-title::after {
       content: '';
       display: block;
       width: 65px;
@@ -578,6 +578,7 @@ footer {
     left: 0;
     z-index: 2;
     display: flex;
+    visibility: hidden;
 }
 .popup-container {
     width: 23.5%;
