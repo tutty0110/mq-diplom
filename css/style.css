@@ -102,7 +102,7 @@ h2, h3, ul, p {
     background-color: rgba(29, 29, 29, 0.45);
 }
 .img-trend {
-	 max-width: 100%;
+	 width: 100%;
 }
 .trend-info {
 	position: absolute;
@@ -125,15 +125,14 @@ h2, h3, ul, p {
   color: #b59f5b;
   }
 
-.trends-title {
+.trends-title, .popup-title {
   font-family: OpenSans-Bold;
   text-transform: uppercase;
   font-size: 20px;
   color: #0f0d0e;
   text-align: center; 
-  margin-bottom: 28px;
 }
-.trends-title::after {
+.trends-title, .popup-title::after {
       content: '';
       display: block;
       width: 65px;
@@ -409,6 +408,7 @@ ul {
   display: flex;
   justify-content: space-between;
   margin: auto;
+  margin-bottom: 60px;
 
 }
 .shop-item {
@@ -416,10 +416,7 @@ box-sizing: border-box;
 width: 32%;
     position: relative;
   display: flex;
-  align-items: center;
-  flex-direction: column;
   margin-top: 17%;
-
 
 }
 .shop-title {
@@ -440,13 +437,14 @@ width: 32%;
     }
 
 .img-shop {
-	width: calc(100% - 12%);
+	width: 88%;
    position: absolute;
    bottom: calc(100% - 30px);
+   left: 6%;
 }
 .shop-info {
       border: 2px solid #b59f5b;
-      padding: 16% 6% 0px;
+      padding: 16% 6% 8%;
       z-index: 1;
   }
 .shop-info-title {
@@ -480,13 +478,34 @@ width: 32%;
   font-size: 14px;
   color: #0f0d0e;
   text-decoration: line-through;
+  position: relative;
 }
+.old-price::after {
+      content: '';
+      width: 2px;
+      border: #0f0d0e 0.5px solid;
+      position: absolute;
+      top: 11px;
+      right: 12px;
+    }
+
 .new-price {
 	 font-family: OpenSans-Bold;
   text-transform: uppercase;
   font-size: 20px;
   color: #0f0d0e;
+  position: relative;
 }
+.new-price::after {
+      content: '';
+      width: 2px;
+      border: #0f0d0e 1px solid;
+      position: absolute;
+      top: 17px;
+      right: 5px;
+    }
+
+
 .shop-button {
   width: 140px; 
   height: 50px; 
@@ -502,16 +521,7 @@ width: 32%;
   background-color: #323232;
   border: none;
 }
-
-
-
-
-
-
-     
-
- 
-.footer {
+footer {
   width: 100%;
   margin: auto;
   text-align: center;
@@ -559,9 +569,122 @@ width: 32%;
   font-size: 12px;
   color: #999999;
 }
+.popup {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+}
+.popup-container {
+    width: 23.5%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 50px 30px;
+    position: relative;
+    align-items: center;    
+}
+.select-label, .newsletter-title, .field-label {
+display: block;
+margin-bottom: 10px;
+}
+.select-label, .select, .newsletter-title, .radio-group-text, .field-label {
+font-family: OpenSans-Regular;
+  font-size: 13px;
+  color: #000000;
+}
+.select {
+	width: 100%;
+	border: none;
+	height: 50px;
+	padding-left: 20px;
+-webkit-appearance:none;
+-moz-appearance:none;
+background-image: url("../svg/form-arrows.svg");
+background-repeat: no-repeat;
+background-position: right 20px center;
+background-size: 7.5px;
+margin-bottom: 25px;
+}
 
+.select:focus {
+	border: 1px solid #b59f5b;
+	    outline: none;
+}
+.radio-group-text::before {
+	content:"";
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url("../svg/form-empty-circle.svg");
+		background-repeat: no-repeat; 
+		background-position: center center;
+		background-size: 15px;
+		vertical-align:middle;
+		margin-right: 5px;
+	}
+	.radio:checked ~ .radio-group-text::before {
+		background-image: url("../svg/form-circle.svg");
+	}
+	.radio {
+		position: absolute;
+		clip: rect(1px,1px,1px,1px);
+		height: 1px;
+		width: 1px;
+	}
+	.radio-group:nth-of-type(n+2) {
+		margin-left: 10px;
+	}
+	.newsletter {
+		margin-bottom: 25px;
+	}
+	.field-textarea {
+		width:100%;
+		max-width: 100%;
+		height: 130px;
+		padding: 20px;
+		box-sizing: border-box;
+		border: none;
+		margin-bottom: 25px;
+	}
+    .field-textarea:focus {
+	border: 1px solid #b59f5b;
+	    outline: none;
+	}
+.popup-button {
+  width: 100%; 
+  height: 50px; 
+  background-color: #b59f5b; 
+  background-position: center; 
+  border: none;
+   font-family: OpenSans-Bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.popup-button:hover {
+  background-color: #323232;
+  border: none;
+  color: #ffffff;
+}
+.popup__close {
+	width: 20px;
+	height: 20px;
+	background-image: url("../svg/form-x.svg");
+	background-color: transparent;
+		background-repeat: no-repeat; 
+		background-position: center center;
+		background-size: 20px;
+		position: absolute;
+		right: 0px;
+		top: -25px;
+		padding: 0px 0px;
+    border-width: 0px;
 
-
+}
 
 
 
