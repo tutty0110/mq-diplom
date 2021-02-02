@@ -799,23 +799,13 @@ margin-bottom: 25px;
 .trends {
   position: relative;
 }
-@media (orientation: portrait) {
+
 .trend {
    width: 49.5%;
- }
-}
- @media (orientation: landscape) {
+   margin-bottom: 0.5%;
+   position: relative;
+  }
 
-.trend {
- width: 24.7%;
-  margin-bottom: 0.5%;
-}
-}
-
-.trend {
- position: relative;
-
-}
 
 .trend:after {
     content: "";
@@ -1513,31 +1503,18 @@ margin-bottom: 25px;
       margin: 10px auto 20px;
       opacity: 0.4;
     }
-@media (orientation: portrait) {
+
 .trend-item {
       display: block;
-} 
+  }
+
 
 .trend {
  width: 100%;
-}
-}
-@media (orientation: landscape) {
-.trend-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-} 
-
-.trend {
- width: 49.5%;
-}
-}
-
-.trend {
  position: relative;
  margin-bottom: 0.5%;
 }
+
 
 .trend:after {
     content: "";
